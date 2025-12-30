@@ -7,34 +7,81 @@ function Hero() {
   return (
     <section id="home" className="hero-section">
       <div className="container">
-        <div className="row align-items-center min-vh-100">
-          <div className="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
-            <div className="hero-content">
-              <h1 className="hero-title">
-                Hi, I'm <span className="gradient-text">Girish</span>
-              </h1>
-              <h2 className="hero-subtitle">UI/UX Designer</h2>
-              <p className="hero-description">
-                I create beautiful, intuitive, and user-centered designs that
-                solve real problems and deliver exceptional user experiences.
-                Transforming ideas into engaging digital experiences.
-              </p>
-              <div className="hero-buttons">
-                <a href="#projects" className="btn btn-primary-custom me-3 mb-3 mb-md-0">
-                  <i className="bi bi-briefcase me-2"></i>
-                  View Projects
-                </a>
-                <a href="#contact" className="btn btn-outline-custom">
-                  <i className="bi bi-envelope me-2"></i>
-                  Contact Me
-                </a>
+        <div className="row align-items-center g-4 g-lg-5">
+          {/* Left Column - Profile Section */}
+          <div className="col-12 col-lg-5 col-xl-4">
+            <div className="hero-profile-wrapper">
+              {/* TOP PROFILE */}
+              <div className="hero-profile-container">
+                {/* IMAGE WITH DECORATIVE CRESCENTS */}
+                <div className="hero-profile-image-wrapper">
+                  {/* Yellow Crescent Decorative Shapes */}
+                  <div className="hero-crescent-shapes">
+                    <div className="hero-crescent hero-crescent-1"></div>
+                    <div className="hero-crescent hero-crescent-2"></div>
+                    <div className="hero-crescent hero-crescent-3"></div>
+                    <div className="hero-crescent hero-crescent-4"></div>
+                  </div>
+                  
+                  {/* Profile Image */}
+                  <div className="hero-profile-image">
+                    <img
+                      src="/profile.jpg"
+                      alt="Girish Kumar S"
+                      className="hero-profile-img"
+                    />
+                  </div>
+                </div>
+
+                {/* INFO */}
+                <div className="hero-profile-info">
+                  <h1 className="hero-profile-name">GIRISH KUMAR S</h1>
+                  <p className="hero-profile-role">UI/UX Designer</p>
+                  <div className="hero-profile-links">
+                    <span className="hero-link-icon">in</span>
+                    <span className="hero-link-text">Bé</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* BOTTOM DATE */}
+              <div className="hero-date-range">
+                (2020 - Present)
               </div>
             </div>
           </div>
-          <div className="col-lg-6 text-center">
-            <div className="hero-image-wrapper">
-              <div className="hero-image-placeholder">
-                <i className="bi bi-person-circle"></i>
+
+          {/* Right Column - Main Content */}
+          <div className="col-12 col-lg-7 col-xl-8">
+            <div className="hero-right d-flex align-items-center justify-content-center h-100">
+              <div className="hero-main-content">
+                {/* Introduction Text */}
+                <div className="hero-intro ">
+                  <div className="hero-intro-line d-flex flex-wrap align-items-center">
+                    <span className="hero-intro-text">Hi! I&apos;m</span>
+                    <span className="hero-name-pill hero-name-pill-yellow">
+                      GIRISH S
+                    </span>
+                  </div>
+                  <div className="hero-intro-line d-flex flex-wrap align-items-center">
+                    <span className="hero-intro-text">a</span>
+                    <span className="hero-name-pill hero-name-pill-dark">
+                      UI/UX Designer
+                    </span>
+                  </div>
+                </div>
+
+                {/* Tagline */}
+                <h1 className="hero-tagline mb-4">
+                  Shaping intuitive digital experience.
+                </h1>
+
+                {/* Description */}
+                <p className="hero-description mb-0">
+                  I&apos;m dedicated to crafting websites that bring your ideas
+                  to life, combining design and development to deliver fast,
+                  impactful results.
+                </p>
               </div>
             </div>
           </div>
@@ -45,4 +92,3 @@ function Hero() {
 }
 
 export default Hero;
-

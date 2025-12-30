@@ -1,131 +1,892 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Footer Section - Dark Theme Matching Image UI */
 .footer-section {
-  background: var(--text-dark);
-  color: white;
-  padding: 60px 0 30px;
+  background-color: #1a1a1a;
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
 }
 
-.footer-brand-name {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+/* Subtle Geometric Pattern Background */
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(255, 255, 255, 0.02) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(255, 255, 255, 0.02) 41px
+    );
+  background-size: 300px 300px, 300px 300px, 200px 200px, 80px 80px, 80px 80px;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.footer-brand-subtitle {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  margin-bottom: 1rem;
+.footer-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.footer-description {
-  color: #cbd5e1;
-  line-height: 1.6;
-  font-size: 0.95rem;
+/* Main Content Section */
+.footer-main-content {
+  padding: 30px 0 100px;
+  position: relative;
+  z-index: 1;
 }
 
-.footer-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
-
-.footer-links a,
-.footer-links li {
-  color: #cbd5e1;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-  display: inline-block;
-}
-
-.footer-links a:hover {
-  color: white;
-  transform: translateX(5px);
-}
-
-.footer-social {
+/* Left Section Styles */
+.footer-left-section {
+  padding-right: 60px;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+/* Opportunity Badge */
+.footer-opportunity-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+/* Separator line after opportunity badge - full width */
+.footer-opportunity-badge::after {
+  content: "";
+  position: absolute;
+  left: calc(-50vw + 50%);
+  bottom: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.footer-yellow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #facc15;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.footer-opportunity-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+/* Main Headline */
+.footer-main-headline {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 32px 0 0 0;
+  letter-spacing: -1.5px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Sub-headline */
+.footer-sub-headline {
+  font-size: 19px;
+  font-weight: 400;
+  color: #999999;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Download Resume Button */
+.footer-resume-btn {
+  background-color: #2a2a2a;
+  border: 1.5px solid #facc15;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.8px;
+  width: fit-content;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.footer-resume-btn:hover {
+  background-color: #facc15;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+}
+
+.footer-resume-btn:active {
+  transform: translateY(0);
+}
+
+/* Right Section Styles */
+.footer-right-section {
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  padding-top: 81px;
+}
+
+/* Profile Card */
+.footer-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.footer-profile-image-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #2a2a2a;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.footer-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+/* Motion blur effect simulation on left side of image */
+.footer-profile-image-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background: linear-gradient(to right, rgba(26, 26, 26, 0.4), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-profile-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.2;
+}
+
+.footer-profile-title {
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+.footer-profile-links {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.footer-link-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+/* Contact Section */
+.footer-contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.footer-contact-heading {
+  font-size: 15px;
+  font-weight: 400;
+  color: #999999;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.footer-email-link {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+.footer-email-link:hover {
+  color: #facc15;
+}
+
+/* Professional Summary */
+.footer-summary {
+  font-size: 17px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 1.7;
+  margin: 0;
+  letter-spacing: 0.2px;
+  max-width: 520px;
+}
+
+.footer-summary-highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Bottom Footer Section */
+.footer-bottom-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 32px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  margin: 0;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.footer-built-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-framer-icon {
+  width: 14px;
+  height: 14px;
+  color: #999999;
+  flex-shrink: 0;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.footer-built-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
-.footer-social-link {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
+@media (min-width: 768px) {
+  .footer-bottom-right {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
 }
 
-.footer-social-link:hover {
-  background: var(--primary-color);
-  transform: translateY(-5px);
-  color: white;
+.footer-designed-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1px;
 }
 
-.footer-contact p {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
+.footer-designer-icon {
+  width: 14px;
+  height: 14px;
+  color: #999999;
+  flex-shrink: 0;
+  display: block;
+  transition: color 0.3s ease;
 }
 
-.footer-contact i {
-  color: var(--primary-color);
+.footer-designer-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1px;
 }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
-  margin-top: 2rem;
+/* Hover Effects */
+.footer-framer-icon:hover,
+.footer-designer-icon:hover {
+  color: #facc15;
 }
 
-.footer-copyright,
-.footer-made {
-  color: #94a3b8;
-  font-size: 0.9rem;
-  margin: 0;
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+  .footer-section .container {
+    max-width: 1320px;
+    padding: 0 80px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 120px;
+  }
+
+  .footer-main-headline {
+    font-size: 45px;
+  }
+
+  .footer-left-section {
+    padding-right: 80px;
+    gap: 36px;
+  }
+
+  .footer-right-section {
+    padding-left: 80px;
+    gap: 48px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .footer-profile-name {
+    font-size: 24px;
+  }
+
+  .footer-profile-title {
+    font-size: 18px;
+  }
 }
 
-@media (max-width: 991.98px) {
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .footer-section .container {
+    padding: 0 60px;
+  }
+
+  .footer-main-headline {
+    font-size: 42px;
+  }
+
+  .footer-left-section {
+    padding-right: 50px;
+    gap: 30px;
+  }
+
+  .footer-right-section {
+    padding-left: 50px;
+    gap: 36px;
+  }
+}
+
+/* Laptop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer-section .container {
+    padding: 0 40px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 90px;
+  }
+
+  .footer-main-headline {
+    font-size: 38px;
+  }
+
+  .footer-left-section {
+    padding-right: 40px;
+    gap: 28px;
+  }
+
+  .footer-right-section {
+    padding-left: 40px;
+    gap: 32px;
+  }
+
+  .footer-sub-headline {
+    font-size: 17px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-profile-name {
+    font-size: 20px;
+  }
+
+  .footer-profile-title {
+    font-size: 16px;
+  }
+
+  .footer-email-link {
+    font-size: 18px;
+  }
+
+  .footer-summary {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .footer-section {
-    padding: 50px 0 25px;
+    padding-top: 0;
   }
 
-  .footer-brand,
-  .footer-title {
-    margin-bottom: 1.5rem;
+  .footer-section .container {
+    padding: 0 40px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 80px;
+  }
+
+  .footer-main-headline {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+
+  .footer-left-section {
+    padding-right: 0;
+    margin-bottom: 70px;
+    gap: 26px;
+  }
+
+  .footer-right-section {
+    padding-left: 0;
+    gap: 36px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 95px;
+    height: 95px;
+  }
+
+  .footer-profile-name {
+    font-size: 19px;
+  }
+
+  .footer-profile-title {
+    font-size: 15px;
+  }
+
+  .footer-email-link {
+    font-size: 18px;
+  }
+
+  .footer-summary {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .footer-bottom-right {
+    margin-top: 20px;
+    justify-content: flex-start;
   }
 }
 
-@media (max-width: 576px) {
-  .footer-social-link {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
+/* Tablet Portrait (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer-section {
+    padding-top: 0;
+  }
+
+  .footer-section .container {
+    padding: 0 32px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 70px;
+  }
+
+  .footer-main-headline {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .footer-left-section {
+    padding-right: 0;
+    margin-bottom: 60px;
+    gap: 24px;
+  }
+
+  .footer-opportunity-text {
+    font-size: 14px;
+  }
+
+  .footer-sub-headline {
+    font-size: 17px;
+  }
+
+  .footer-resume-btn {
+    padding: 14px 32px;
+    font-size: 13px;
+  }
+
+  .footer-right-section {
+    padding-left: 0;
+    gap: 32px;
+  }
+
+  .footer-profile-card {
+    gap: 20px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .footer-profile-name {
+    font-size: 18px;
+  }
+
+  .footer-profile-title {
+    font-size: 15px;
+  }
+
+  .footer-contact-heading {
+    font-size: 14px;
+  }
+
+  .footer-email-link {
+    font-size: 17px;
+  }
+
+  .footer-summary {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .footer-bottom-right {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .footer-section {
+    padding-top: 0;
+  }
+
+  .footer-section .container {
+    padding: 0 24px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 60px;
+  }
+
+  .footer-main-headline {
+    font-size: 27px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+  }
+
+  .footer-left-section {
+    padding-right: 0;
+    margin-bottom: 50px;
+    gap: 24px;
+  }
+
+  .footer-opportunity-badge {
+    gap: 8px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+  }
+
+
+  .footer-yellow-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .footer-opportunity-text {
+    font-size: 14px;
+  }
+
+  .footer-sub-headline {
+    font-size: 17px;
+  }
+
+  .footer-resume-btn {
+    font-size: 13px;
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 300px;
+    letter-spacing: 0.6px;
+  }
+
+  .footer-right-section {
+    padding-left: 0;
+    gap: 28px;
+  }
+
+  .footer-profile-card {
+    gap: 18px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 85px;
+    height: 85px;
+  }
+
+  .footer-profile-name {
+    font-size: 17px;
+    letter-spacing: 0.8px;
+  }
+
+  .footer-profile-title {
+    font-size: 15px;
+  }
+
+  .footer-link-text {
+    font-size: 14px;
+  }
+
+  .footer-contact-section {
+    gap: 14px;
+  }
+
+  .footer-contact-heading {
+    font-size: 14px;
+  }
+
+  .footer-email-link {
+    font-size: 17px;
+    word-break: break-word;
+  }
+
+  .footer-summary {
+    font-size: 16px;
+    max-width: 100%;
+    line-height: 1.65;
+  }
+
+  .footer-bottom-section {
+    padding: 28px 0;
+  }
+
+  .footer-bottom-left {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .footer-bottom-right {
+    margin-top: 0;
+    justify-content: flex-start;
   }
 
   .footer-copyright,
-  .footer-made {
-    text-align: center;
-    margin-bottom: 0.5rem;
+  .footer-built-text,
+  .footer-designed-text,
+  .footer-designer-name {
+    font-size: 12px;
+  }
+
+  .footer-framer-icon,
+  .footer-designer-icon {
+    width: 13px;
+    height: 13px;
   }
 }
 
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .footer-section {
+    padding-top: 0;
+  }
+
+  .footer-section .container {
+    padding: 0 20px;
+  }
+
+  .footer-main-content {
+    padding: 30px 0 50px;
+  }
+
+  .footer-main-headline {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+  }
+
+  .footer-left-section {
+    gap: 22px;
+    margin-bottom: 45px;
+  }
+
+  .footer-opportunity-badge {
+    gap: 7px;
+    margin-bottom: 36px;
+    padding-bottom: 18px;
+  }
+
+  .footer-yellow-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .footer-opportunity-text {
+    font-size: 13px;
+  }
+
+  .footer-sub-headline {
+    font-size: 16px;
+  }
+
+  .footer-resume-btn {
+    font-size: 12px;
+    padding: 13px 24px;
+    max-width: 100%;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-right-section {
+    gap: 26px;
+  }
+
+  .footer-profile-card {
+    gap: 16px;
+  }
+
+  .footer-profile-image-wrapper {
+    width: 75px;
+    height: 75px;
+  }
+
+  .footer-profile-name {
+    font-size: 16px;
+    letter-spacing: 0.6px;
+  }
+
+  .footer-profile-title {
+    font-size: 14px;
+  }
+
+  .footer-link-text {
+    font-size: 13px;
+  }
+
+  .footer-contact-section {
+    gap: 12px;
+  }
+
+  .footer-contact-heading {
+    font-size: 13px;
+  }
+
+  .footer-email-link {
+    font-size: 16px;
+  }
+
+  .footer-summary {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .footer-bottom-section {
+    padding: 24px 0;
+  }
+
+  .footer-bottom-left {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .footer-copyright,
+  .footer-built-text,
+  .footer-designed-text,
+  .footer-designer-name {
+    font-size: 11px;
+  }
+
+  .footer-framer-icon,
+  .footer-designer-icon {
+    width: 12px;
+    height: 12px;
+  }
+}

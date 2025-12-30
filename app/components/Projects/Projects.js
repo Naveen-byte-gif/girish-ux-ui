@@ -6,88 +6,189 @@ import "./Projects.css";
 function Projects() {
   const projects = [
     {
-      title: "E-Commerce Mobile App",
-      category: "Mobile UI/UX",
-      description: "Modern and intuitive e-commerce mobile application design with seamless shopping experience",
-      image: "bi-phone",
-      tags: ["Figma", "Prototyping", "Mobile Design"],
+      title: "Emami East Bengal Football Website",
+      category: "WEBSITE DESIGN",
+      subtitle: "UI/UX Design",
+      image: "/emami-east-bengal.png",
     },
     {
-      title: "Healthcare Dashboard",
-      category: "Web Design",
-      description: "Comprehensive healthcare management dashboard with clean and accessible interface",
-      image: "bi-laptop",
-      tags: ["Adobe XD", "Dashboard", "Web Design"],
+      title: "Parathought Website",
+      category: "WEBSITE DESIGN",
+      subtitle: "UI/UX Design",
+      image: "/parathought.png",
     },
     {
-      title: "Food Delivery App",
-      category: "Mobile UI/UX",
-      description: "User-friendly food delivery app with smooth ordering and tracking experience",
-      image: "bi-phone",
-      tags: ["Figma", "Mobile", "UX Research"],
+      title: "Stride Future Website",
+      category: "WEBSITE DESIGN",
+      subtitle: "UI/UX Design",
+      image: "/stride-future.png",
     },
     {
-      title: "Finance Management App",
-      category: "Mobile UI/UX",
-      description: "Intuitive finance tracking application with beautiful data visualization",
-      image: "bi-phone",
-      tags: ["Sketch", "Prototyping", "Mobile Design"],
-    },
-    {
-      title: "Corporate Website",
-      category: "Web Design",
-      description: "Professional corporate website with modern design and excellent user experience",
-      image: "bi-laptop",
-      tags: ["Figma", "Web Design", "Responsive"],
-    },
-    {
-      title: "Fitness App Design",
-      category: "Mobile UI/UX",
-      description: "Motivational fitness app with engaging interface and workout tracking features",
-      image: "bi-phone",
-      tags: ["Adobe XD", "Mobile", "UI Design"],
+      title: "Punjab FC Mobile",
+      category: "MOBILE DESIGN",
+      subtitle: "UI/UX Design",
+      image: "/punjab-fc.png",
     },
   ];
 
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        <div className="text-center mb-5">
-          <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">
-            A showcase of my recent design work and creative solutions
-          </p>
+        {/* Header Section */}
+        <div className="projects-header">
+          <div className="projects-label">FEATURED PROJECTS</div>
+          <h2 className="projects-title">
+            I blend creativity with technical expertise
+          </h2>
         </div>
 
-        <div className="row g-4">
-          {projects.map((project, index) => (
-            <div key={index} className="col-md-6 col-lg-4">
+        {/* Projects Grid */}
+        <div className="projects-grid">
+          {/* First Row - 2 Cards */}
+          <div className="row g-4 mb-4">
+            {/* Card 1 - Emami East Bengal */}
+            <div className="col-12 col-md-6 col-lg-6">
               <div className="project-card">
-                <div className="project-image">
-                  <div className="project-image-placeholder">
-                    <i className={`bi ${project.image}`}></i>
-                  </div>
-                  <div className="project-overlay">
-                    <a href="#" className="project-link">
-                      <i className="bi bi-arrow-up-right"></i>
-                    </a>
-                  </div>
-                </div>
                 <div className="project-content">
-                  <span className="project-category">{project.category}</span>
-                  <h4 className="project-title">{project.title}</h4>
-                  <p className="project-description">{project.description}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="project-tag">
-                        {tag}
-                      </span>
-                    ))}
+                  <span className="project-category">
+                    {projects[0].category}
+                  </span>
+                  <h3 className="project-title">{projects[0].title}</h3>
+                  <p className="project-subtitle">{projects[0].subtitle}</p>
+                </div>
+                <div className="project-image-wrapper">
+                  <div className="project-image-container">
+                    <img
+                      src={projects[0].image}
+                      alt={projects[0].title}
+                      className="project-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div
+                      className="project-image-placeholder"
+                      style={{ display: "none" }}
+                    >
+                      <i className="bi bi-laptop"></i>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* Card 2 - Parathought */}
+            <div className="col-12 col-md-6 col-lg-6">
+              <div className="project-card">
+                <div className="project-content">
+                  <span className="project-category">
+                    {projects[1].category}
+                  </span>
+                  <h3 className="project-title">{projects[1].title}</h3>
+                  <p className="project-subtitle">{projects[1].subtitle}</p>
+                </div>
+                <div className="project-image-wrapper">
+                  <div className="project-image-container">
+                    <img
+                      src={projects[1].image}
+                      alt={projects[1].title}
+                      className="project-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div
+                      className="project-image-placeholder"
+                      style={{ display: "none" }}
+                    >
+                      <i className="bi bi-laptop"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Row - 3 Cards */}
+          <div className="row g-4">
+            {/* Card 3 - Stride Future */}
+            <div className="col-12 col-md-6 col-lg-4">
+              <div className="project-card">
+                <div className="project-content">
+                  <span className="project-category">
+                    {projects[2].category}
+                  </span>
+                  <h3 className="project-title">{projects[2].title}</h3>
+                  <p className="project-subtitle">{projects[2].subtitle}</p>
+                </div>
+                <div className="project-image-wrapper">
+                  <div className="project-image-container">
+                    <img
+                      src={projects[2].image}
+                      alt={projects[2].title}
+                      className="project-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div
+                      className="project-image-placeholder"
+                      style={{ display: "none" }}
+                    >
+                      <i className="bi bi-laptop"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 - Punjab FC Mobile */}
+            <div className="col-12 col-md-6 col-lg-4">
+              <div className="project-card">
+                <div className="project-content">
+                  <span className="project-category">
+                    {projects[3].category}
+                  </span>
+                  <h3 className="project-title">{projects[3].title}</h3>
+                  <p className="project-subtitle">{projects[3].subtitle}</p>
+                </div>
+                <div className="project-image-wrapper">
+                  <div className="project-image-container">
+                    <img
+                      src={projects[3].image}
+                      alt={projects[3].title}
+                      className="project-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div
+                      className="project-image-placeholder"
+                      style={{ display: "none" }}
+                    >
+                      <i className="bi bi-phone"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 5 - CTA Card */}
+            <div className="col-12 col-md-12 col-lg-4">
+              <div className="project-card project-cta-card">
+                <div className="project-cta-content">
+                  <span className="project-cta-text">View all projects</span>
+                  <div className="project-cta-icon">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -95,4 +196,3 @@ function Projects() {
 }
 
 export default Projects;
-

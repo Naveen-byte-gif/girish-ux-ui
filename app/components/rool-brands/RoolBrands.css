@@ -1,0 +1,116 @@
+.rool-brands-section {
+  background-color: #000000;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0 !important;
+}
+
+.rool-brands-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rool-brands-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rool-brands-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.rool-brands-track {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: none;
+  contain: layout style paint;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.rool-brands-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  contain: layout;
+}
+
+.rool-brand-item {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.rool-brand-separator {
+  color: #ffc107;
+  font-size: 1rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rool-brand-item {
+    font-size: 0.875rem;
+  }
+  
+  .rool-brand-separator {
+    font-size: 0.875rem;
+  }
+  
+  .rool-brands-content {
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+  
+  .rool-brands-section {
+    padding: 1rem 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .rool-brand-item {
+    font-size: 0.75rem;
+  }
+  
+  .rool-brand-separator {
+    font-size: 0.75rem;
+  }
+  
+  .rool-brands-content {
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+  
+  .rool-brands-section {
+    padding: 0.75rem 0 !important;
+  }
+}
+

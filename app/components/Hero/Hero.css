@@ -1,13 +1,21 @@
+/* Import Inter font with required weights */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  padding-top: 100px;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 80px 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  padding-top: 120px; /* Account for fixed navbar */
 }
 
+/* Subtle Geometric Pattern Background */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -15,107 +23,872 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.015) 2px,
+      rgba(0, 0, 0, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.015) 2px,
+      rgba(0, 0, 0, 0.015) 4px
+    );
+  background-size: 40px 40px;
+  opacity: 0.3;
   z-index: 0;
+  pointer-events: none;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  max-width: 550px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-image-placeholder {
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  border-radius: 50%;
+/* Override Bootstrap container max-width if needed */
+.hero-section .container-fluid {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+  min-height: 100%;
 }
 
-.hero-image-placeholder i {
-  font-size: 200px;
-  color: white;
-  opacity: 0.8;
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-@media (max-width: 991.98px) {
-  .hero-title {
-    font-size: 2.5rem;
+@media (max-width: 575px) {
+  .hero-section .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Left Column Styles */
+.hero-profile-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px 24px;
+  min-height: 400px;
+  justify-content: space-between;
+}
+
+.hero-profile-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Profile Image Wrapper with Crescents */
+.hero-profile-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+/* Yellow Crescent Decorative Shapes */
+.hero-crescent-shapes {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  width: 60px;
+  height: 120px;
+}
+
+.hero-crescent {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #facc15;
+  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+}
+
+.hero-crescent-1 {
+  width: 50px;
+  height: 50px;
+  left: -25px;
+  background-color: #fef3c7;
+}
+
+.hero-crescent-2 {
+  width: 60px;
+  height: 60px;
+  left: -20px;
+  background-color: #fde68a;
+}
+
+.hero-crescent-3 {
+  width: 70px;
+  height: 70px;
+  left: -15px;
+  background-color: #fcd34d;
+}
+
+.hero-crescent-4 {
+  width: 80px;
+  height: 80px;
+  left: -10px;
+  background-color: #facc15;
+}
+
+/* Profile Image */
+.hero-profile-image {
+  position: relative;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Profile Info */
+.hero-profile-info {
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-profile-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.5px;
+  color: #333333;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hero-profile-role {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #666666;
+  margin: 0;
+}
+
+.hero-profile-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.hero-link-icon {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hero-link-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Date Range */
+.hero-date-range {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+/* Right Column Styles */
+.hero-right {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-main-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Introduction Text */
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.hero-intro-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.hero-intro-text {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+/* Pill Badges */
+.hero-name-pill {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+  .hero-name-pill {
+    white-space: normal;
+  }
+}
+
+.hero-name-pill-yellow {
+  background-color: #facc15;
+  color: #333333;
+  border: none;
+}
+
+.hero-name-pill-outline {
+  background-color: rgba(250, 204, 21, 0.1);
+  border: 1px solid #facc15;
+  color: #333333;
+}
+
+.hero-name-pill-dark {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #333333;
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  /* Ensure font properties are applied */
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* Description */
+.hero-description {
+  font-size: 18px;
+  color: #666666;
+  line-height: 1.6;
+  max-width: 600px;
+  width: 100%;
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80px;
+    line-height: 130%;
+    letter-spacing: 0;
   }
 
-  .hero-subtitle {
-    font-size: 1.5rem;
+  .hero-name-pill {
+    font-size: 40px;
+  }
+
+  .hero-intro-text {
+    font-size: 40px;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 84px;
+    line-height: 130%;
+    letter-spacing: 0;
+  }
+
+  .hero-name-pill {
+    font-size: 36px;
+  }
+
+  .hero-intro-text {
+    font-size: 36px;
+  }
+}
+
+/* Tablet Landscape (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+    line-height: 130%;
+    letter-spacing: 0;
+  }
+
+  .hero-name-pill {
+    font-size: 32px;
+    padding: 6px 20px;
+  }
+
+  .hero-intro-text {
+    font-size: 32px;
+  }
+
+  .hero-profile-image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-profile-name {
+    font-size: 26px;
+  }
+
+  .hero-profile-role {
+    font-size: 15px;
+  }
+
+  .hero-crescent-1 {
+    width: 45px;
+    height: 45px;
+    left: -22px;
+  }
+
+  .hero-crescent-2 {
+    width: 55px;
+    height: 55px;
+    left: -18px;
+  }
+
+  .hero-crescent-3 {
+    width: 65px;
+    height: 65px;
+    left: -14px;
+  }
+
+  .hero-crescent-4 {
+    width: 75px;
+    height: 75px;
+    left: -10px;
+  }
+}
+
+/* Tablet Portrait (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-section {
+    padding: 80px 0 60px 0;
+    padding-top: 120px; /* Account for fixed navbar */
+  }
+
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 56px;
+    line-height: 130%;
+    letter-spacing: 0;
+  }
+
+  .hero-name-pill {
+    font-size: 28px;
+    padding: 6px 18px;
+  }
+
+  .hero-intro-text {
+    font-size: 28px;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
-  .hero-image-placeholder {
-    width: 300px;
-    height: 300px;
+  .hero-profile-image {
+    width: 100px;
+    height: 100px;
   }
 
-  .hero-image-placeholder i {
-    font-size: 150px;
+  .hero-profile-name {
+    font-size: 24px;
+  }
+
+  .hero-profile-role {
+    font-size: 14px;
+  }
+
+  .hero-profile-wrapper {
+    min-height: 350px;
+    padding: 20px;
+  }
+
+  .hero-crescent-1 {
+    width: 40px;
+    height: 40px;
+    left: -20px;
+  }
+
+  .hero-crescent-2 {
+    width: 50px;
+    height: 50px;
+    left: -16px;
+  }
+
+  .hero-crescent-3 {
+    width: 60px;
+    height: 60px;
+    left: -12px;
+  }
+
+  .hero-crescent-4 {
+    width: 70px;
+    height: 70px;
+    left: -8px;
   }
 }
 
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem;
+/* Mobile Landscape and Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero-section {
+    padding: 70px 0 50px 0;
+    padding-top: 110px; /* Account for fixed navbar */
   }
 
-  .hero-subtitle {
-    font-size: 1.25rem;
+  .hero-section .row {
+    margin: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
   }
 
-  .hero-image-placeholder {
-    width: 250px;
-    height: 250px;
+  .hero-section .row > [class*="col-"] {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .hero-image-placeholder i {
-    font-size: 120px;
+  .hero-profile-wrapper {
+    min-height: auto;
+    padding: 28px 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-profile-container {
+    gap: 18px;
+    align-items: center;
+  }
+
+  .hero-profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-profile-name {
+    font-size: 24px;
+  }
+
+  .hero-profile-role {
+    font-size: 15px;
+  }
+
+  .hero-profile-info {
+    text-align: left;
+    gap: 8px;
+  }
+
+  .hero-date-range {
+    padding-top: 20px;
+    margin-top: 0;
+  }
+
+  .hero-main-content {
+    text-align: center !important;
+    align-items: center !important;
+    gap: 28px;
+    padding: 0 12px;
+  }
+
+  .hero-intro {
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero-intro-line {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 120%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0 auto 24px auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 0 15px;
+  }
+
+  .hero-intro-text {
+    font-size: 26px;
+  }
+
+  .hero-name-pill {
+    font-size: 26px;
+    padding: 6px 20px;
+  }
+
+  .hero-crescent-1 {
+    width: 40px;
+    height: 40px;
+    left: -20px;
+  }
+
+  .hero-crescent-2 {
+    width: 50px;
+    height: 50px;
+    left: -16px;
+  }
+
+  .hero-crescent-3 {
+    width: 60px;
+    height: 60px;
+    left: -12px;
+  }
+
+  .hero-crescent-4 {
+    width: 70px;
+    height: 70px;
+    left: -8px;
   }
 }
 
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .hero-section {
+    padding: 60px 0 40px 0;
+    min-height: auto;
+    padding-top: 100px; /* Account for fixed navbar on mobile */
+  }
+
+  .hero-section .row {
+    margin: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+
+  .hero-section .row > [class*="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero-profile-wrapper {
+    min-height: auto;
+    padding: 24px 16px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-profile-container {
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-profile-image {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+  }
+
+  .hero-profile-name {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.3px;
+    margin: 0;
+  }
+
+  .hero-profile-role {
+    font-size: 14px;
+    line-height: 140%;
+    margin: 0;
+  }
+
+  .hero-profile-links {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .hero-profile-info {
+    gap: 8px;
+  }
+
+  .hero-date-range {
+    font-size: 13px;
+    padding-top: 16px;
+    margin-top: 0;
+  }
+
+  .hero-right {
+    padding: 0;
+    width: 100%;
+  }
+
+  .hero-main-content {
+    text-align: center !important;
+    align-items: center !important;
+    gap: 24px;
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .hero-intro {
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .hero-intro-line {
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .hero-intro-text {
+    font-size: 22px;
+    line-height: 130%;
+  }
+
+  .hero-name-pill {
+    font-size: 22px;
+    padding: 6px 18px;
+    line-height: 130%;
+  }
+
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .hero-crescent-1 {
+    width: 38px;
+    height: 38px;
+    left: -19px;
+  }
+
+  .hero-crescent-2 {
+    width: 48px;
+    height: 48px;
+    left: -15px;
+  }
+
+  .hero-crescent-3 {
+    width: 58px;
+    height: 58px;
+    left: -11px;
+  }
+
+  .hero-crescent-4 {
+    width: 68px;
+    height: 68px;
+    left: -7px;
+  }
+}
+
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .hero-section {
+    padding-top: 90px; /* Account for fixed navbar on very small screens */
+  }
+
+  .hero-profile-wrapper {
+    padding: 20px 12px;
+    margin-bottom: 32px;
+    gap: 16px;
+  }
+
+  .hero-profile-container {
+    gap: 14px;
+  }
+
+  .hero-profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-profile-name {
+    font-size: 18px;
+  }
+
+  .hero-profile-role {
+    font-size: 13px;
+  }
+
+  .hero-profile-links {
+    font-size: 12px;
+  }
+
+  .hero-date-range {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+
+  .hero-main-content {
+    gap: 20px;
+  }
+
+  .hero-intro {
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .hero-intro-line {
+    gap: 8px;
+  }
+
+  .hero-intro-text {
+    font-size: 20px;
+  }
+
+  .hero-name-pill {
+    font-size: 20px;
+    padding: 5px 16px;
+  }
+
+  .hero-tagline {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  .hero-crescent-1 {
+    width: 35px;
+    height: 35px;
+    left: -17px;
+  }
+
+  .hero-crescent-2 {
+    width: 45px;
+    height: 45px;
+    left: -14px;
+  }
+
+  .hero-crescent-3 {
+    width: 55px;
+    height: 55px;
+    left: -11px;
+  }
+
+  .hero-crescent-4 {
+    width: 65px;
+    height: 65px;
+    left: -8px;
+  }
+}
