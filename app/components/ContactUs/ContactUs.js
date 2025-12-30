@@ -1,170 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import "./ContactUs.css";
 
 function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
-  const contactInfo = [
-    {
-      icon: "bi-envelope",
-      title: "Email",
-      content: "girish@example.com",
-      link: "mailto:girish@example.com",
-    },
-    {
-      icon: "bi-telephone",
-      title: "Phone",
-      content: "+1 234 567 8900",
-      link: "tel:+12345678900",
-    },
-    {
-      icon: "bi-geo-alt",
-      title: "Location",
-      content: "Available Worldwide",
-      link: "#",
-    },
-  ];
-
   return (
     <section id="contact" className="contact-section">
-      <div className="container">
-        <div className="text-center mb-5">
-          <h2 className="section-title">Contact Us</h2>
-          <p className="section-subtitle">
-            Let's work together to bring your ideas to life
-          </p>
+      <div className="contact-container">
+        <div className="contact-header">
+          <h2 className="contact-label">CONTACT ME</h2>
+          <h1 className="contact-title">You can find me online</h1>
         </div>
 
-        <div className="row g-5">
-          <div className="col-lg-4">
-            <div className="contact-info-wrapper">
-              <h3 className="contact-info-title">Get in Touch</h3>
-              <p className="contact-info-description">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your visions.
-              </p>
-
-              <div className="contact-info-cards">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="contact-info-card"
-                  >
-                    <div className="contact-info-icon">
-                      <i className={`bi ${info.icon}`}></i>
-                    </div>
-                    <div className="contact-info-content">
-                      <h5>{info.title}</h5>
-                      <p>{info.content}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              <div className="social-links">
-                <a href="#" className="social-link" aria-label="LinkedIn">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-                <a href="#" className="social-link" aria-label="Dribbble">
-                  <i className="bi bi-dribbble"></i>
-                </a>
-                <a href="#" className="social-link" aria-label="Behance">
-                  <i className="bi bi-behance"></i>
-                </a>
-                <a href="#" className="social-link" aria-label="Twitter">
-                  <i className="bi bi-twitter"></i>
-                </a>
+        <div className="contact-cards">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-card linkedin-card">
+            <div className="card-content">
+              <span className="card-label">Linked in</span>
+              <div className="card-icon linkedin-icon">
+                <span className="icon-text">in</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div className="col-lg-8">
-            <div className="contact-form-wrapper">
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="row g-3">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <label htmlFor="name" className="form-label">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="John Doe"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <label htmlFor="email" className="form-label">
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <div className="form-group">
-                      <label htmlFor="message" className="form-label">
-                        Your Message
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="message"
-                        name="message"
-                        rows="6"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        placeholder="Tell me about your project..."
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <button type="submit" className="btn btn-primary-custom">
-                      <i className="bi bi-send me-2"></i>
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
+          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="contact-card behance-card">
+            <div className="card-content">
+              <span className="card-label">Behance</span>
+              <div className="card-icon behance-icon">
+                <span className="icon-text">Bē</span>
+              </div>
             </div>
-          </div>
+          </a>
+
+          <a href="#contact" className="contact-card get-in-touch-card">
+            <div className="card-content">
+              <span className="card-label">Get in touch</span>
+              <div className="card-icon arrow-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>

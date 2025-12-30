@@ -1,89 +1,126 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
 
 function About() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Form submitted:", formData);
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="about" className="about-section">
       <div className="container">
-        <div className="text-center mb-5">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">
-            Passionate UI/UX Designer dedicated to creating meaningful and
-            impactful user experiences through thoughtful design.
-          </p>
-        </div>
+        {/* Featured Projects Label */}
+        <div className="featured-label">FEATURED PROJECTS</div>
 
-        <div className="row align-items-center g-5">
-          <div className="col-lg-6">
-            <div className="about-content">
-              <h3 className="about-heading">
-                Crafting Digital Experiences with Purpose
-              </h3>
-              <p className="about-text">
-                I am a creative UI/UX designer with a passion for creating
-                intuitive and beautiful user interfaces. My approach combines
-                user research, design thinking, and modern design principles to
-                deliver solutions that not only look great but also provide
-                exceptional user experiences.
-              </p>
-              <p className="about-text">
-                With expertise in user-centered design, I work closely with
-                clients to understand their needs and translate them into
-                engaging digital experiences. I believe in the power of design
-                to solve problems and create meaningful connections between
-                users and products.
-              </p>
+        {/* About Me Heading */}
+        <h1 className="about-main-title">About Me</h1>
 
-              <div className="about-features">
-                <div className="row g-4">
-                  <div className="col-md-6">
-                    <div className="feature-card">
-                      <div className="feature-icon">
-                        <i className="bi bi-palette"></i>
-                      </div>
-                      <h5>UI Design</h5>
-                      <p>Creating visually appealing and modern interfaces</p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="feature-card">
-                      <div className="feature-icon">
-                        <i className="bi bi-people"></i>
-                      </div>
-                      <h5>UX Research</h5>
-                      <p>Understanding user needs and behaviors</p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="feature-card">
-                      <div className="feature-icon">
-                        <i className="bi bi-phone"></i>
-                      </div>
-                      <h5>Responsive Design</h5>
-                      <p>Designing for all devices and screen sizes</p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="feature-card">
-                      <div className="feature-icon">
-                        <i className="bi bi-lightbulb"></i>
-                      </div>
-                      <h5>Innovation</h5>
-                      <p>Bringing fresh ideas and creative solutions</p>
-                    </div>
-                  </div>
+        <div className="about-content-wrapper">
+          {/* Left Section - Profile Card */}
+          <div className="about-left">
+            <div className="profile-card">
+              {/* Yellow Bars */}
+              <div className="yellow-bars">
+                <div className="bar bar-1"></div>
+                <div className="bar bar-2"></div>
+                <div className="bar bar-3"></div>
+              </div>
+
+              {/* Profile Image */}
+              <div className="profile-image">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Girish Kumar S" 
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="profile-placeholder" style={{display: 'none'}}>
+                  <span>GK</span>
                 </div>
+              </div>
+
+              {/* Profile Info */}
+              <div className="profile-info">
+                <h2 className="profile-name">GIRISH KUMAR S</h2>
+                <p className="profile-role">UI/UX Designer</p>
+                <p className="profile-status">I'm OK</p>
               </div>
             </div>
           </div>
 
-          <div className="col-lg-6">
-            <div className="about-image-wrapper">
-              <div className="about-image-placeholder">
-                <i className="bi bi-person-workspace"></i>
-              </div>
+          {/* Right Section - Biography */}
+          <div className="about-right">
+            <div className="biography">
+              <p className="bio-paragraph">
+                Hi, I'm Girish Kumar, a UI/UX Designer focused on creating clear, user-centric digital experiences. I enjoy turning complex ideas into intuitive, well-structured interfaces that feel simple, purposeful, and easy to use.
+              </p>
+              <p className="bio-paragraph">
+                My approach is rooted in understanding user needs, business goals, and usability principles to design solutions that balance aesthetics with functionality. I focus on crafting interfaces that are not only visually refined but also logical, accessible, and scalable.
+              </p>
+              <p className="bio-paragraph">
+                I've worked on a variety of digital products, collaborating with cross-functional teams to deliver meaningful outcomes. Whether it's designing a new experience or improving an existing one, my goal is always to create thoughtful designs that solve real problems.
+              </p>
+              <p className="bio-paragraph">
+                Open to full-time opportunities—let's build impactful digital experiences together.
+              </p>
+            </div>
+
+            {/* Contact Form */}
+            <div className="contact-form-card">
+              <h3 className="contact-form-title">Let's get in touch</h3>
+              <form onSubmit={handleSubmit} className="contact-form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name."
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="form-input"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email."
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="form-input"
+                  required
+                />
+                <textarea
+                  name="message"
+                  placeholder="Leave me a message."
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="form-textarea"
+                  rows="4"
+                  required
+                ></textarea>
+                <button type="submit" className="submit-button">
+                  SEND MESSAGE
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -93,4 +130,3 @@ function About() {
 }
 
 export default About;
-
