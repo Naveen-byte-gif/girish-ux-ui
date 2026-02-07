@@ -243,7 +243,23 @@
 .footer-profile-links {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffd700;
+  opacity: 0.9;
 }
 
 .footer-link-text {
