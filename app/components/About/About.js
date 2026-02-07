@@ -45,10 +45,10 @@ function About() {
                 <div className="bar bar-3"></div>
               </div>
 
-              {/* Profile Image */}
+              {/* Profile Image - from public/about_image.png */}
               <div className="profile-image">
                 <img 
-                  src="/profile.jpg" 
+                  src="/about_image.png" 
                   alt="Girish Kumar S" 
                   onError={(e) => {
                     e.target.style.display = 'none';

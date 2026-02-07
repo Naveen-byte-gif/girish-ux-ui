@@ -7,47 +7,36 @@ function Hero() {
   return (
     <section id="home" className="hero-section">
       <div className="container">
-        <div className="row align-items-center g-4 g-lg-5">
+        <div className="row align-items-center hero-row">
           {/* Left Column - Profile Section */}
           <div className="col-12 col-lg-5 col-xl-4">
             <div className="hero-profile-wrapper">
               {/* TOP PROFILE */}
               <div className="hero-profile-container">
-                {/* IMAGE WITH DECORATIVE CRESCENTS */}
+                {/* Profile Image from public folder */}
                 <div className="hero-profile-image-wrapper">
-                  {/* Yellow Crescent Decorative Shapes */}
-                  <div className="hero-crescent-shapes">
-                    <div className="hero-crescent hero-crescent-1"></div>
-                    <div className="hero-crescent hero-crescent-2"></div>
-                    <div className="hero-crescent hero-crescent-3"></div>
-                    <div className="hero-crescent hero-crescent-4"></div>
-                  </div>
-                  
-                  {/* Profile Image */}
                   <div className="hero-profile-image">
                     <img
-                      src="/profile.jpg"
+                      src="/hero_banner_image.png"
                       alt="Girish Kumar S"
                       className="hero-profile-img"
                     />
                   </div>
                 </div>
 
-                {/* INFO */}
-                <div className="hero-profile-info">
-                  <h1 className="hero-profile-name">GIRISH KUMAR S</h1>
-                  <p className="hero-profile-role">UI/UX Designer</p>
-                  <div className="hero-profile-links">
+                {/* INFO - single line: name, role, in Bé */}
+                <div className="hero-profile-info hero-profile-info-single-line">
+                  <span className="hero-profile-name">GIRISH KUMAR S</span>
+                  <span className="hero-profile-role">UI/UX Designer</span>
+                  <span className="hero-profile-links">
                     <span className="hero-link-icon">in</span>
                     <span className="hero-link-text">Bé</span>
-                  </div>
+                  </span>
                 </div>
               </div>
 
               {/* BOTTOM DATE */}
-              <div className="hero-date-range">
-                (2020 - Present)
-              </div>
+              <div className="hero-date-range">(2020 - Present)</div>
             </div>
           </div>
 

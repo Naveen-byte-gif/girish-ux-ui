@@ -102,7 +102,7 @@
   }
 }
 
-/* Profile Image */
+/* Profile Image - aligned from public folder */
 .profile-image {
   width: 140px;
   height: 140px;
@@ -111,12 +111,17 @@
   flex-shrink: 0;
   background: #f0f0f0;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .profile-placeholder {
@@ -353,6 +358,12 @@
     width: 120px;
     height: 120px;
     margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-image img {
+    object-position: center top;
   }
 
   .profile-placeholder {
@@ -469,6 +480,8 @@
     width: 110px;
     height: 110px;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .profile-placeholder {
@@ -577,6 +590,8 @@
     width: 100px;
     height: 100px;
     margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .profile-placeholder {

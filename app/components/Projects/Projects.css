@@ -3,6 +3,10 @@
 /* Projects Section - Dark Theme */
 .projects-section {
   background-color: #1a1a1a;
+  background-image: url("/projects_bg.png");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
   padding: 120px 0;
   position: relative;
   overflow: hidden;
@@ -38,9 +42,20 @@
   pointer-events: none;
 }
 
+/* Use standard Bootstrap .container (not container-fluid) - keeps content within breakpoint max-widths */
 .projects-section .container {
   position: relative;
   z-index: 1;
+}
+
+/* Prevent horizontal movement/overflow - constrain grid children */
+.projects-section .projects-grid [class*="col-"] {
+  min-width: 0;
+}
+
+.projects-section .project-card-link,
+.projects-section .project-card {
+  min-width: 0;
 }
 
 /* Header Section */
@@ -73,6 +88,23 @@
 /* Projects Grid */
 .projects-grid {
   margin-top: 0;
+}
+
+/* Project Card Link - wraps card, opens project URL in new tab */
+.project-card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-link:hover {
+  color: inherit;
+}
+
+.project-card-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
 }
 
 /* Project Card */
@@ -368,6 +400,7 @@
 @media (max-width: 575px) {
   .projects-section {
     padding: 50px 0;
+    background-position: top center;
   }
 
   .projects-header {
@@ -439,6 +472,7 @@
 @media (max-width: 400px) {
   .projects-section {
     padding: 40px 0;
+    background-position: center;
   }
 
   .projects-title {

@@ -53,7 +53,7 @@ function Footer() {
                 <div className="footer-profile-card">
                   <div className="footer-profile-image-wrapper">
                     <img
-                      src="/profile.jpg"
+                      src="/about_image.png"
                       alt="Girish Kumar S"
                       className="footer-profile-image"
                       onError={(e) => {
@@ -65,7 +65,24 @@ function Footer() {
                     <h2 className="footer-profile-name">GIRISH KUMAR S</h2>
                     <p className="footer-profile-title">UI/UX Designer</p>
                     <div className="footer-profile-links">
-                      <span className="footer-link-text">in Be</span>
+                      <a
+                        href="https://www.linkedin.com/in/girish-ux/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                        aria-label="LinkedIn"
+                      >
+                        LinkedIn
+                      </a>
+                      <a
+                        href="https://www.behance.net/girishkumar8569"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                        aria-label="Behance"
+                      >
+                        Behance
+                      </a>
                     </div>
                   </div>
                 </div>
